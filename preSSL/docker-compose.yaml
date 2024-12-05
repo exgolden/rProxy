@@ -1,7 +1,3 @@
-networks:
-  ${DOCKER_NETWORK}:
-    driver: bridge
-
 services:
   helloworld:
     container_name: hello-world
