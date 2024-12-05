@@ -6,3 +6,7 @@ A reverse proxy to deliver my SaaS. Currently on development.
 
 For production you need to create the SaaS network before the containers, so it persist even when the
 containers shut down. Use this command: `docker network create --driver bridge saas-network`
+
+# Pendings
+
+1. I have not set the restart policy
