@@ -1,32 +1,37 @@
-networks:
-  ${DOCKER_NETWORK}:
-    driver: bridge
+#volumes:
+#  certbot-conf:
+#  certbot-www:
+
+#networks:
+#  test-network:
+#    driver: bridge
 
 services:
   helloworld:
     container_name: hello-world
     image: crccheck/hello-world
-    networks:
-      - ${DOCKER_NETWORK}
+    #    networks:
+  #      - test-network
 
   nginx:
     container_name: nginx
     image: nginx:latest
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    networks:
-      - ${DOCKER_NETWORK}
+    #    networks:
+    #      - test-network
 
   certbot:
     image: certbot/certbot
     container_name: certbot
+    #    networks:
+    #      - test-network
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    networks:
-      - ${DOCKER_NETWORK}
-    command: certonly --webroot -w /var/www/certbot --email ${CERTBOT_EMAIL} -d ${CERTBOT_DOMAIN} --agree-tos --non-interactive --keep-unitl-expiring
+    command: certonly --webroot -w /var/www/certbot --email hamsterale@gmail.com -d yamdynamics.dev --agree-tos
