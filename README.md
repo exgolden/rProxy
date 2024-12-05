@@ -44,7 +44,4 @@ A reverse proxy to deliver my SaaS through https. Currently on development.
 
 ## Pendings
 
-1. Theres no restart policy.
-2. SSL certificates need to be, manually renewed
-3. Delete the volumes in the compose and check the bind paths
-4. Connect the containers with the network.
+1.  SSL certificates need to be manually renewed
