@@ -41,6 +41,9 @@ A reverse proxy to deliver my SaaS through https. Currently on development.
    -d yamdynamics.dev --non-interactive --agree-tos --register-unsafely-without-email;
    done"
    ```
+5. I accidentaly used relative paths for the SSL certificates & challenge in the
+   last version, since the proxy is deployed in two steps, the SSL certifcates
+   are saved in each proxy step, so the postSSL could not reach the certificates
 
 ## Pendings
 

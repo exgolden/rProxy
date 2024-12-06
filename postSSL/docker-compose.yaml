@@ -17,19 +17,19 @@ services:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - ~/certbot/conf:/etc/letsencrypt
+      - ~/certbot/www:/var/www/certbot
     networks:
       - saas_network
     restart: unless-stopped
 
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    networks:
-      - saas_network
-    restart: unless-stopped
-    command: certonly --webroot -w /var/www/certbot --email ${CERTBOT_EMAIL} -d ${CERTBOT_DOMAIN} --agree-tos --non-interactive --keep-until-expiring
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - ~/certbot/conf:/etc/letsencrypt
+  #     - ~/certbot/www:/var/www/certbot
+  #   networks:
+  #     - saas_network
+  #   restart: unless-stopped
+  #   command: certonly --webroot -w /var/www/certbot --email ${CERTBOT_EMAIL} -d ${CERTBOT_DOMAIN} --agree-tos --non-interactive --keep-until-expiring
