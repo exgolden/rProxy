@@ -28,8 +28,8 @@ services:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - ~/certbot/conf:/etc/letsencrypt
-      - ~/certbot/www:/var/www/certbot
+      - ../certbot/conf:/etc/letsencrypt
+      - ../certbot/www:/var/www/certbot
     networks:
       - saas_network
     restart: unless-stopped
