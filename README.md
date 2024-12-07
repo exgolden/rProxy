@@ -42,3 +42,5 @@ A reverse proxy to deliver my SaaS through https. Currently on development.
 ## Pendings
 
 1.  SSL certificates need to be manually renewed
+2.  Change the name of pre-containers and post-containers so you dont need to rm
+    them
