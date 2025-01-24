@@ -3,13 +3,6 @@ networks:
     external: true
 
 services:
-  # helloworld:
-  #   container_name: hello-world
-  #   image: crccheck/hello-world
-  #   networks:
-  #     - saas_network
-  #   restart: unless-stopped
-
   nginx:
     container_name: nginx
     image: nginx:latest
