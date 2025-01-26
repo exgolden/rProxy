@@ -27,8 +27,7 @@ services:
       certonly --webroot
       -w /var/www/certbot
       --email ${CERTBOT_EMAIL}
-      -d ${CERTBOT_YAM}
-      -d ${CERTBOT_DESVAN}
+      -d ${CERTBOT_YAM}, ${CERTBOT_DESVAN}
       --agree-tos
       --non-interactive
       --keep-until-expiring
