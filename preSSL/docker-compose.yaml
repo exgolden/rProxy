@@ -1,15 +1,7 @@
 networks:
   saas_network:
     external: true
-
 services:
-  helloworld:
-    container_name: hello-world
-    image: crccheck/hello-world
-    networks:
-      - saas_network
-    restart: unless-stopped
-
   nginx:
     container_name: nginx
     image: nginx:latest
@@ -22,7 +14,6 @@ services:
     networks:
       - saas_network
     restart: unless-stopped
-
   certbot:
     image: certbot/certbot
     container_name: certbot
@@ -32,4 +23,12 @@ services:
     networks:
       - saas_network
     restart: unless-stopped
-    command: certonly --webroot -w /var/www/certbot --email ${CERTBOT_EMAIL} -d ${CERTBOT_DOMAIN} --agree-tos --non-interactive --keep-until-expiring
+    command: >
+      certonly --webroot
+      -w /var/www/certbot
+      --email ${CERTBOT_EMAIL}
+      -d ${CERTBOT_YAM}
+      -d ${CERTBOT_DESVAN}
+      --agree-tos
+      --non-interactive
+      --keep-until-expiring
