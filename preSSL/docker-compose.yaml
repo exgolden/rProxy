@@ -29,6 +29,6 @@ services:
       -m ${CERTBOT_EMAIL}
       --agree-tos
       --cert-name ${CERTBOT_DES}
-      -d ${CERBOT_DES}
+      -d ${CERTBOT_DES}
       --cert-name ${CERTBOT_YAM}
       -d ${CERTBOT_YAM}
