@@ -16,8 +16,10 @@ A reverse proxy to deliver my SaaS through https. Currently on development.
       SSL certificates_. Theres no https redirection nor SSL certificates
       configuration. Run the compose command without the detach mode,
       so you can confirm that SSL certificates were succesfully pulled.
+      **For now youll need to pull certs individually**.
 
-   2. After the SSL certificates were pulled, shut down the preSSL compose file. Command: `docker-compose down`
+      2. After the SSL certificates were pulled, shut down the preSSL compose file. Command: `docker-compose down`
+
    3. postSSL: Run the compose nginx configuration for http traffic on port 80.
       _this is only used to renew the SSL certificates,
       it also enforces https on http traffic_ and https traffic
