@@ -26,7 +26,7 @@ services:
     command: >
       certonly --webroot
       -w /var/www/certbot
-      --email ${CERBOT_EMAIL}
+      -m ${CERTBOT_EMAIL}
       --agree-tos
       --cert-name ${CERTBOT_DES}
       -d ${CERBOT_DES}
