@@ -30,5 +30,7 @@ services:
       --agree-tos
       --cert-name ${CERTBOT_DES}
       -d ${CERTBOT_DES}
+      --keep-until-expiring
       --cert-name ${CERTBOT_YAM}
       -d ${CERTBOT_YAM}
+      --keep-until-expiring
