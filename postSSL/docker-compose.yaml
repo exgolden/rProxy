@@ -11,7 +11,8 @@ services:
       - 443:443
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/:/etc/nginx/sites-enabled/
+      - ./nginx/desvan.conf:/etc/nginx/sites-enabled/desvan.conf
+      - ./nginx/yam.conf:/etc/nginx/sites-enabled/yam.conf
       - ../certbot/conf:/etc/letsencrypt
     networks:
       - saas_network
