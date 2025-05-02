@@ -28,6 +28,5 @@ services:
       -w /var/www/certbot
       -m ${CERTBOT_EMAIL}
       --agree-tos
-      -d ${CERTBOT_DES}
-      # -d ${CERTBOT_YAM}
+      -d ${CERTBOT_DES},${CERTBOT_YAM}
       --keep-until-expiring
