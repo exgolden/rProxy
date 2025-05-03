@@ -24,9 +24,7 @@ services:
       - saas_network
     restart: unless-stopped
     command: >
-      certonly --webroot
-      -w /var/www/certbot
-      -m ${CERTBOT_EMAIL}
-      --agree-tos
-      -d ${CERTBOT_DES},${CERTBOT_YAM}
-      --keep-until-expiring
+      sh -c "
+      certbot certonly --webroot -w /var/www/certbot -m ${CERTBOT_EMAIL} --agree-tos -d ${CERTBOT_DES} --keep-until-expiring &&
+      certbot certonly --webroot -w /var/www/certbot -m ${CERTBOT_EMAIL} --agree-tos -d ${CERTBOT_YAM} --keep-until-expiring
+      "
