@@ -28,12 +28,12 @@ services:
       -w /var/www/certbot
       -m ${CERTBOT_EMAIL}
       --agree-tos
-      ${CERTBOT_DES}
+      -d ${CERTBOT_DES}
       --keep-until-expiring
     # command: >
     #   certonly --webroot
     #   -w /var/www/certbot
     #   -m ${CERTBOT_EMAIL}
     #   --agree-tos
-    #   ${CERTBOT_YAM}
+    #   -d ${CERTBOT_YAM}
     #   --keep-until-expiring
