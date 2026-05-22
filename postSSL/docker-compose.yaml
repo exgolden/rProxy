@@ -13,6 +13,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/desvan.conf:/etc/nginx/sites-enabled/desvan.conf
       - ./nginx/yam.conf:/etc/nginx/sites-enabled/yam.conf
+      - ./nginx/propflow.conf:/etc/nginx/sites-enabled/propflow.conf
       - ../certbot/conf:/etc/letsencrypt
     networks:
       - saas_network
